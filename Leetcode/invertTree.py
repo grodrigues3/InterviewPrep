@@ -1,9 +1,4 @@
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+from data_structures.TreeNode import TreeNode
 
 """
 INPUT:
@@ -33,3 +28,29 @@ class Solution:
         self.invertTree(root.left)
         self.invertTree(root.right)
         return root
+
+
+def create_example():
+    root = TreeNode(4)
+    two = TreeNode(2)
+    sev = TreeNode(7)
+    one = TreeNode(1)
+    thr = TreeNode(3)
+    six = TreeNode(6)
+    nin = TreeNode(9)
+
+    root.left = two
+    root.right = sev
+    two.left = one
+    two.right = thr
+    sev.left = six
+    sev.right = nin
+    return root
+
+if __name__ == "__main__":
+    root = create_example()
+    print root
+    S = Solution()
+    inverted =  S.invertTree(root)
+    print inverted
+

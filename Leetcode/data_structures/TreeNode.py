@@ -9,12 +9,20 @@ class TreeNode:
         if self.left is None and self.right is None:
             return 1
         return max(self.left.height(), self.right.height()) + 1
-    """ Come up with a pretty print later
+
     def __str__(self):
-        pass
-        h = self.height()
-        toBuild = ""
-        cur = self
-        for i in range(h):
-            toBuild += "\t"*(i-1) + cur.val
-    """      
+        q = [self]
+        explored = []
+
+        while q:
+            cur = q.pop(0)
+            explored += cur.val,
+            if cur.left:
+                q += cur.left,
+            if cur.right:
+                q += cur.right,
+        
+        return str(explored)
+
+
+
