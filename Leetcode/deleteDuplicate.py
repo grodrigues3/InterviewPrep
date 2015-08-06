@@ -31,7 +31,7 @@ def setup_test(test):
 
     for i in range(len(test)-1):
         test[i].next = test[i+1]
-    print "Setup Complete..."
+    print "Test setup Complete..."
     print "\t", test[0]
     return test[0]
 
